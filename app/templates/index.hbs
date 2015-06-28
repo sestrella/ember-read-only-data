@@ -1,0 +1,49 @@
+<h2>CPU Metrics</h2>
+
+<table class="table">
+  <thead>
+    <th>
+      <td>Usage</td>
+    </th>
+    <th>
+      <td>Date</td>
+    </th>
+  </thead>
+  <tbody>
+  {{#each metric in cpuMetrics}}
+    <tr>
+      <td>{{metric.usage}}</td>
+      <td>{{metric.date}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+{{pagination-pager current=cpuMetrics.currentPage
+                   count=cpuMetrics.totalPages
+                   change='cpuMetricsPageChanged'}}
+
+<h2>Memory Metrics</h2>
+
+<table class="table">
+  <thead>
+    <th>
+      <td>Usage</td>
+    </th>
+    <th>
+      <td>Date</td>
+    </th>
+  </thead>
+  <tbody>
+  {{#each metric in memoryMetrics}}
+    <tr>
+      <td>{{metric.usage}}</td>
+      <td>{{metric.date}}</td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+{{pagination-pager current=memoryMetrics.currentPage
+                   count=memoryMetrics.totalPages
+                   change='memoryMetricsPageChanged'}}
